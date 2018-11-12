@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+        
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tourism In New Zealand</title>
+        <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <h1> Kia Ora </h1> 
+    <h2> Welcome to an official page of Tourism in New Zealand </h2>
+<div>
+<nav>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index1.html">Tourist Destination</a></li>
+    <li><a href="index2.html">Tourist Attraction</a></li>
+    <li><a href="index3.html">Videos</a></li>
+    <li><a href="index4.html">Gallery</a></li>
+    <li><a href="index5.html">Our Blog</a></li>
+    <li><a href="index6.html">References</a></li>
+</ul>
+</nav>
+</div>
+
+<h7>The script opens an external csv formatted file.<br>
+   To run the script please click on the button below.</h7> 
+   <p1 align="center"><button type="button" onclick="mytable()">RUN CSV</button></p1><br><br>
+   <br>
+   <br>
+   <br>
+   <script src="d3.v3.min.js"></script>
+
+   <script type="text/javascript"charset="utf-8">
+       function mytable() {
+        d3.text("Table1.csv", function(data) 
+        {
+        var parsedCSV = d3.csv.parseRows(data);
+        var container = d3.select("body")    
+        .append("table")
+        .selectAll("tr")
+        .data(parsedCSV).enter()
+        .append("tr")
+        .selectAll("td")
+        .data(function(d) { return d; }).enter()
+        .append("td")
+        .text(function(d) { return d; });
+ 	   }
+   </script>
+
+<footer style="background:lightblue;
+    color:rgb(44, 60, 151);
+    margin-top:10%;
+    margin-left:8%;
+    width: 85%;    
+    font-size: 25px;
+    height: 200px;
+    text-align:center;
+    font-family: 'Open Sans', sans-serif;">
+    <p>Posted by: Asmita Khadka</p>
+    <p>Contact information: www.tourismgovt.ac.nz</p> 
+    <p>@Copyright 2018</p>
+      
+</footer>
